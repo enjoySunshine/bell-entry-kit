@@ -84,6 +84,41 @@
         aspect-ratio: 4/3;
       }
 
+      .bell-count {
+        margin-top: 16px;
+        padding: 10px 14px;
+        border-radius: 10px;
+        background: rgba(250, 204, 21, 0.12);
+        border: 1px solid rgba(250, 204, 21, 0.35);
+        color: #fde047;
+        font-size: 22px;
+        font-weight: 800;
+        text-align: center;
+        letter-spacing: 0.04em;
+      }
+
+      .player-state {
+        margin-top: 10px;
+        display: grid;
+        gap: 4px;
+        font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+        font-size: 12px;
+        color: #c7d2fe;
+      }
+
+      .player-state .player-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 6px 8px;
+        border-radius: 8px;
+        background: rgba(99, 102, 241, 0.12);
+      }
+
+      .player-state .offline {
+        opacity: 0.55;
+      }
+
       pre {
         margin: 12px 0 0;
         padding: 12px;
@@ -109,7 +144,16 @@
         <button id="btn-time" type="button">GET /time</button>
         <button id="btn-express" type="button">GET /express-hello</button>
       </div>
-      <canvas id="game" width="800" height="600"></canvas>
+      <div
+        id="bell-count"
+        class="bell-count"
+        data-testid="bell-count"
+        data-count="0"
+        data-bell-count="0"
+        aria-live="polite"
+      >次数：<span id="count" data-testid="count" data-count="0" data-bell-count="0">0</span></div>
+      <canvas id="game" width="800" height="600" data-count="0" data-bell-count="0" aria-label="铃铛场景画布"></canvas>
+      <div id="player-state" data-testid="player-state" class="player-state" aria-live="polite"></div>
       <pre id="log">Ready.</pre>
     </main>
     <script type="module" src="/src/client.ts"></script>

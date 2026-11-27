@@ -43,6 +43,8 @@ app.get("/hello", (req, res) => {
 });
 
 gameServer.define("my_room", MyRoom);
+gameServer.define("my_room_2", MyRoom);
+gameServer.define("bell", MyRoom);
 gameServer.define("lobby", LobbyRoom);
 
 // Define RelayRoom as "relay"

@@ -260,6 +260,12 @@ export const server = config({
     my_room: defineRoom(MyRoom).
       filterBy(["progress"]).
       sortBy({ clients: -1 }),
+    // Backwards-compatible aliases for the example browser client and
+    // deterministic bell scenario harnesses.
+    my_room_2: defineRoom(MyRoom).
+      sortBy({ clients: -1 }),
+    bell: defineRoom(MyRoom).
+      sortBy({ clients: -1 }),
   },
 
   routes: createRouter({

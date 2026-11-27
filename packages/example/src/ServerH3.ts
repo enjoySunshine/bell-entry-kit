@@ -22,6 +22,8 @@ const transport = new H3Transport({ server, app });
 const gameServer = new Server({ transport, });
 
 gameServer.define("my_room", MyRoom);
+gameServer.define("my_room_2", MyRoom);
+gameServer.define("bell", MyRoom);
 
 gameServer.listen(port)
   .then(() => console.log(`Listening on https://${endpoint}:${port}`))
